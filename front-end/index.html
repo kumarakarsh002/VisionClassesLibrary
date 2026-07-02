@@ -4,8 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E - Library</title>
+    <link rel="Stylesheet" href="./css/index.css" />
 </head>
 <body>
-    <h1>Hello Sir</h1>
+    <div class="main-logincontainer">
+        <div class="main-logincontainer-left">
+            <img src="./image/login.png" alt="Image"/>
+        </div>
+        <div class="main-logincontainer-right">
+            <h1>Admin Login</h1>
+            <form class="main-logincontainer-right-form">
+                <div class="main-logincontainer-right-form-div">
+                    <label>Username</label>
+                    <input type="text" placeholder="Enter Your Username" />
+                </div>
+                <div class="main-logincontainer-right-form-div">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter Your Password" />
+                </div>
+            </form>
+            <input type="button" value="Login" class="main-logincontainer-right-button" onclick="MainLogin()"/> 
+        </div>
+    </div>
 </body>
+<script src="./js/index.js"></script>
 </html>
