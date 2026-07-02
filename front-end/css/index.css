@@ -10,6 +10,7 @@ body{
 .main-logincontainer{
     /* border: 2px solid green; */
     width: 65%;
+    
     display: flex;
     background-color: white;
     background-color: white;
@@ -67,13 +68,13 @@ body{
     box-shadow:0 0 0 4px rgba(99,102,241,0.15);
 }
 .main-logincontainer-right-button{
-    margin: 40px 0px 0px 160px;
+    margin: 40px 0px 0px 120px;
     background: linear-gradient(135deg, #6366f1, #8b5cf6);
     color: white;
     border: none;
     /* margin-top: 25px;
     margin-left: 30%; */
-    padding: 14px 45px;
+    padding: 14px 60px;
     font-size: 16px;
     font-weight: 600;
     border-radius: 12px;
@@ -93,4 +94,7 @@ body{
 .main-logincontainer-right-button:active{
     transform: translateY(1px);
     box-shadow: 0 12px 28px rgba(99, 102, 241, 0.03);
+}
+.main-logincontainer-right p{
+    text-align: center;
 }
