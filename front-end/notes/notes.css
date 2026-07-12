@@ -67,20 +67,36 @@ body{
 
 .dashboardsection-div-left-contentsection{
     border: 2px solid seagreen;
-    height: 45%;
+    height: 50%;
+    overflow: hidden;
 }
+.dashboardsection-div-left-contentsection p{
+    line-height: 0px;
+}
+
+.dashboardsection-div-left-contentsection a{
+    text-decoration: none; 
+    color: black;
+    
+    /* text-align: left; */
+}
+
+
+
 .dashboardsection-div-left-contentsection-linkdiv{
     border: 2px solid green;
     display: flex;
-    margin: 0px 15px 15px 15px;
+    margin: 0px 15px 10px 15px;
     padding: 5px 0px 5px 0px;
+    border-radius: 8px;
     /* text-align: center; */
     
 }
-.dashboardsection-div-left-contentsection-linkdiv a{
-    text-decoration: none;
-    /* text-align: left; */
+
+.dashboardsection-div-left-contentsection-linkdiv:hover{
+    background-color: red;
 }
+
 .dashboardsection-div-left-contentsection-linkdiv p{
     text-align:right;
     line-height: 0px;
