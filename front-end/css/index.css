@@ -98,3 +98,8 @@ body{
 .main-logincontainer-right p{
     text-align: center;
 }
+
+.main-logincontainer-right-resetbutton{
+    text-decoration: none;
+    
+}
