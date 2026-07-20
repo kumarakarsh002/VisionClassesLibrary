@@ -19,7 +19,7 @@ buttons.forEach(button => {
         // SPA content loading here
         const fileName = button.getAttribute("data-file");
 
-        localStorage.setItem("savedPage", fileName);
+        // localStorage.setItem("savedPage", fileName);
 
         // Go fetch the file from your computer/server
         fetch(fileName)
@@ -43,7 +43,7 @@ buttons.forEach(button => {
 
 // ⭐ NEW: CHECK MEMORY WHEN THE PAGE RELOADS
 // Go look in the notebook to see if a page was saved
-const lastVisitedPage = localStorage.getItem("savedPage");
+// const lastVisitedPage = localStorage.getItem("savedPage");
 
 if (lastVisitedPage) {
     // Find the exact button that matches the saved page

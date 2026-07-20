@@ -69,7 +69,7 @@ body{
     box-shadow:0 0 0 4px rgba(99,102,241,0.15);
 }
 .main-logincontainer-right-button{
-    margin: 6% 0% 0% 30%;
+    margin: 6% 25% 0% 25%;
     background: linear-gradient(135deg, #6366f1, #8b5cf6);
     color: white;
     border: none;
