@@ -7,8 +7,6 @@ const contentContainer = document.getElementById("main-content");
 const buttons = document.querySelectorAll(".dashboardsection-div-left-contentsection-button");
 
 
-
-
 async function loadPage(page) {
     const response = await fetch(`Classes/${page}.html`);
 
@@ -17,6 +15,9 @@ async function loadPage(page) {
     contentContainer.innerHTML = html;
     if (page === "Class12") {
         initClass12();
+    }
+    if (page === "Class11"){
+        initClass11();
     }
 };
 
