@@ -11,68 +11,311 @@
 <style>
     .content {
         height: 100vh;
+        overflow: scroll;
+        border: 2px solid pink;
+    }
+
+    .content-mainheader {
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 2px solid pink;
     }
 
     .content-mainheaderdiv {
         margin-top: 1%;
+        margin-bottom: 1%;
         height: 125px;
-        border: 2px solid green;
-        border-radius: 10px;
+        border: none;
+        border-radius: 18px;
+        box-shadow: 0 12px 30px rgba(108, 99, 255, 0.25);
         width: 95%;
         transition: 0.3s;
-        padding: 0.5%;
+        padding: 1%;
         line-height: 10px;
+        background: linear-gradient(135deg, #6C63FF 0%, #8B5CF6 50%, #A855F7 100%);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
     }
-    .content-mainsearchdiv{
-        border: 2px solid salmon;
+
+    .content-mainheaderdiv:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 18px 40px rgba(108, 99, 255, 0.35);
+    }
+
+    .content-mainheaderdiv h1 {
+        margin: 0;
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: .5px;
+    }
+
+    .content-mainheaderdiv p {
+        margin-top: 12px;
+        margin-bottom: 0;
+        font-size: 16px;
+        color: rgba(255, 255, 255, .9);
+        line-height: 1.6;
+        max-width: 700px;
+    }
+
+    .content-mainsearchdiv {
+        /* border: 2px solid salmon; */
         width: 95%;
-        
+
         margin-top: 1%;
         display: flex;
+        align-items: center;
     }
-    .content-mainsearchdivcontainer{
-        border: 1px solid #f0f0f0;
-        border-radius: 8px;
-        background-color: #ffffff;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.02);
-        width: 35%;
-        
-        padding: 0.8% 0% 0.8% 2%;
+
+    .content-mainsearchdivcontainer {
+        width: 40%;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        padding: 12px 18px;
+        background: #fff;
+
+        border: 1.5px solid #e5e7eb;
+        border-radius: 14px;
+
+        box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
+        transition: all .3s ease;
     }
-    .content-search-input{
-        /* padding: 12px; */
-        font-weight: 600;
-        color: #333333;
+
+    .content-mainsearchdivcontainer:hover {
+        border-color: #c4b5fd;
+        box-shadow: 0 8px 20px rgba(139, 92, 246, .12);
+    }
+
+    .content-mainsearchdivcontainer:focus-within {
+        border-color: #8b5cf6;
+        box-shadow: 0 0 0 4px rgba(139, 92, 246, .15);
+    }
+
+    .search-icon {
+        color: #8b5cf6;
+        font-size: 17px;
+    }
+
+    .content-search-input {
+        flex: 1;
         border: none;
         outline: none;
         background: transparent;
+
         font-size: 15px;
-        width: 80%;
-        /* width: 45%; */
+        color: #111827;
+        font-weight: 500;
     }
-    .content-search-input::placeholder{
-        color: #717171;
+
+    .content-search-input::placeholder {
+        color: #9ca3af;
     }
-    
+
+    .content-mainsearchdiv-filter {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        padding: 10px 16px;
+        margin-left: auto;
+        margin-right: 2%;
+
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        transition: all .25s ease;
+    }
+
+    .content-mainsearchdiv-filter:hover {
+        border-color: #8b5cf6;
+        box-shadow: 0 8px 20px rgba(139, 92, 246, .15);
+    }
+
+    .content-mainsearchdiv-filter i {
+        color: #8b5cf6;
+        font-size: 16px;
+    }
+
+    .content-mainsearchdiv-filter label {
+        font-size: 15px;
+        font-weight: 600;
+        color: #6b7280;
+    }
+
+    .content-mainsearchdiv-filter select {
+        border: none;
+        outline: none;
+        background: transparent;
+
+        font-size: 15px;
+        font-weight: 600;
+        color: #111827;
+
+        cursor: pointer;
+        appearance: none;
+        padding-right: 10px;
+    }
+
+    .content-mainchipsdiv {
+        /* border: 2px solid greenyellow; */
+        width: 95%;
+        margin-top: 1%;
+        display: flex;
+        gap: 10px;
+    }
+
+    .content-mainchipsdiv {
+        width: 95%;
+        margin-top: 18px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .content-mainchipsdiv-chips {
+        padding: 10px 20px;
+        border: 1px solid #e5e7eb;
+        border-radius: 999px;
+        margin-bottom: 2%;
+        background: #ffffff;
+        color: #4b5563;
+
+        font-size: 14px;
+        font-weight: 600;
+
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content-mainchipsdiv-chips:hover {
+        background: #f5f3ff;
+        border-color: #8b5cf6;
+        color: #8b5cf6;
+        transform: translateY(-2px);
+    }
+
+    .content-mainchipsdiv-chips:active {
+        transform: scale(0.96);
+    }
+
+    .content-mainchipsdiv-chips.active {
+        background: linear-gradient(135deg, #7c3aed, #9333ea);
+        color: #fff;
+        border-color: transparent;
+        box-shadow: 0 8px 20px rgba(124, 58, 237, .25);
+    }
+
+    #pdf-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 10px;
+    }
+
+    .pdf-card {
+        /* margin: 2%; */
+        width: 300px;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        overflow: hidden;
+        background: white;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pdf-info {
+        display: flex;
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .pdf-icon {
+        background: red;
+        color: white;
+        padding: 10px;
+        height: fit-content;
+        border-radius: 5px;
+    }
+
+    .pdf-title {
+        font-weight: bold;
+    }
+
+    .pdf-meta {
+        color: gray;
+        font-size: 14px;
+    }
+
+    .pdf-actions {
+        display: flex;
+        justify-content: space-around;
+        margin-top: auto;
+        /* border: 2px solid gray; */
+        padding: 15px;
+    }
+
+    .action-btn {
+        text-decoration: none;
+        padding: 8px 12px;
+        background: #333;
+        color: white;
+        border-radius: 5px;
+    }
 </style>
 
 <body>
     <section class="content">
-        <div class="content-mainheaderdiv">
-            <h1>Find Your Coaching Content</h1>
-            <p>Explore a wide range of coaching sessions tailored for your academic success.</p>
-        </div>
-        <div class="content-mainsearchdiv">
-            <div class="content-mainsearchdivcontainer">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Search For Notes & Questions" class="content-search-input"/>
-            <!-- <h1>search div</h1> -->
+        <div class="content-mainheader">
+            <div class="content-mainheaderdiv">
+
+                <h1>Find Your Coaching Content</h1>
+                <p>Explore notes, booklets, PYQs, and study materials designed
+                    to help you succeed in your Class 12 preparation.</p>
+            </div>
+
+            <!-- Search Container -->
+            <div class="content-mainsearchdiv">
+                <div class="content-mainsearchdivcontainer">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search For Notes & Questions" class="content-search-input" />
+
+                </div>
+                <div class="content-mainsearchdiv-filter">
+                    <i class="fa-solid fa-arrow-down-wide-short"></i>
+
+                    <label for="sort">Sort By</label>
+
+                    <select id="sort">
+                        <option>Notes</option>
+                        <option>Booklet</option>
+                        <option>Questions</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Chips -->
+            <div class="content-mainchipsdiv">
+                <button class="content-mainchipsdiv-chips active">All</button>
+                <button class="content-mainchipsdiv-chips">Mathematics</button>
+                <button class="content-mainchipsdiv-chips">Physics</button>
+                <button class="content-mainchipsdiv-chips">Chemistry</button>
+                <button class="content-mainchipsdiv-chips">Biology</button>
             </div>
         </div>
+        <!-- Content -->
+
+        <div id="pdf-list"></div>
 
     </section>
 </body>
