@@ -6,6 +6,8 @@
 const loginForm = document.getElementById('LoginForm');
 const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
+const button = document.getElementById('button')
+
 
 // 2. Listen for the form to be 'submitted' (via click or Enter key)
 loginForm.addEventListener('submit', function(event) {
@@ -28,11 +30,19 @@ loginForm.addEventListener('submit', function(event) {
         return;
     }
 
-    // 6. Check the credentials
-    if (usernameValue === 'admin' && passwordValue === '12345') {
-        alert('Login Successful! Welcome, Admin.');
-        window.location.href = 'notes/notes.html';
+    button.value = 'Verifying...'
+    button.disabled = true;
+
+    setTimeout(() =>{
+        
+        if (usernameValue === 'admin' && passwordValue === '12345') {
+        // alert('Login Successful! Welcome, Admin.');
+        window.location.replace('notes/notes.html');
     } else {
         alert('Error: Incorrect username or password.');
     }
+    },3000)
+
+    // 6. Check the credentials
+    
 });
